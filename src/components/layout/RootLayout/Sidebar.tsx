@@ -9,9 +9,9 @@ import {
   PeopleIcon,
   SettingsIcon,
   StatisticsIcon
-} from '../icons';
+} from '../../icons';
 
-const list = [
+const items = [
 	{
 		name: 'Dashboard',
 		link: '/dashboard',
@@ -29,7 +29,7 @@ const list = [
 	},
 	{
 		name: 'CaptureTools',
-		link: '/capture-tools',
+		link: '/capture-tools/links-library',
 		icon: <MagnetIcon />
 	},
 	{
@@ -62,7 +62,7 @@ const list = [
 export default function Sidebar() {
 	return (
 		<ul className='menu border-r border-r-base-300 min-h-full bg-base-100 pt-20'>
-			{list.map(({ name, link, icon }) => (
+			{items.map(({ name, link, icon }) => (
 				<li key={name}>
 					<Link className='py-4' to={link}>
 						{icon}

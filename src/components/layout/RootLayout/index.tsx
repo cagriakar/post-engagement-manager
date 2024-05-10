@@ -10,9 +10,7 @@ export default function RootLayout() {
 				<input id='my-drawer' type='checkbox' className='drawer-toggle' />
 				<div className='drawer-content'>
 					<div className='pt-24'>
-						<div className='grid grid-cols-1 gap-0 lg:grid-cols-9'>
-							<div className='col-span-2 hidden px-6 lg:block'>Captrute Tools</div>
-						</div>
+						<Outlet />
 					</div>
 				</div>
 				<div className='drawer-side'>
@@ -20,7 +18,6 @@ export default function RootLayout() {
 					<Sidebar />
 				</div>
 			</div>
-			<Outlet />
 		</div>
 	);
 }
