@@ -1,3 +1,4 @@
+import ThemeToggle from '@/components/ThemeToggle';
 import {
   AccountIcon,
   BookIcon,
@@ -5,9 +6,7 @@ import {
   HelpCenterIcon,
   HomeIcon,
   LogoutIcon,
-  MoonIcon,
   OnlineIcon,
-  SunIcon,
   WalletIcon,
   WarningIcon
 } from '@/components/icons';
@@ -41,12 +40,7 @@ export default function Navbar() {
           <WarningIcon />
         </button>
       </div>
-      <label className='swap swap-rotate btn btn-circle btn-ghost hidden md:inline-grid'>
-        <input type='checkbox' />
-        <MoonIcon />
-        <SunIcon />
-      </label>
-
+      <ThemeToggle />
       <div role='listbox' className='dropdown hidden md:inline-block dropdown-end'>
         <label tabIndex={0}>
           <button className='btn btn-circle btn-ghost'>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   AnnouncementIcon,
   DashboardIcon,
@@ -24,7 +24,7 @@ const items = [
   },
   {
     name: 'Message',
-    link: '/capture-tools',
+    link: '/messsage',
     icon: <MessageIcon />
   },
   {
@@ -44,27 +44,29 @@ const items = [
   },
   {
     name: 'Layer',
-    link: '/capture-tools',
+    link: '/layer',
     icon: <LayerIcon />
   },
   {
     name: 'Report',
-    link: '/capture-tools',
+    link: '/report',
     icon: <StatisticsIcon />
   },
   {
     name: 'Settings',
-    link: '/capture-tools',
+    link: '/settings',
     icon: <SettingsIcon />
   }
 ];
 
 export default function Sidebar() {
+  const { pathname } = useLocation();
+
   return (
     <ul className='menu border-r border-r-base-300 min-h-full bg-base-100 pt-20'>
       {items.map(({ name, link, icon }) => (
         <li key={name}>
-          <Link className='py-4' to={link}>
+          <Link className={`py-4 ${pathname.split('/')[1] === link.split('/')[1] ? 'active' : ''}`} to={link}>
             {icon}
           </Link>
         </li>

@@ -794,6 +794,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@theme-toggles/react@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "@theme-toggles/react@npm:4.1.0"
+  peerDependencies:
+    react: ^16 || ^17 || ^18
+    react-dom: ^16 || ^17 || ^18
+  checksum: 10c0/3c1b1917fa0183028492d36d2fe766794cb76f58467b6ac88f8cef1e6ae5705adf64279f5a2846d29cbfc3b08ec391af14b161bb6d9ec6469e04d114e9eb4cfc
+  languageName: node
+  linkType: hard
+
 "@types/babel__core@npm:^7.20.5":
   version: 7.20.5
   resolution: "@types/babel__core@npm:7.20.5"
@@ -3687,6 +3697,7 @@ __metadata:
     "@tailwindcss/typography": "npm:^0.5.13"
     "@tanstack/react-query": "npm:^5.35.1"
     "@tanstack/react-table": "npm:^8.16.0"
+    "@theme-toggles/react": "npm:^4.1.0"
     "@types/node": "npm:^20.12.11"
     "@types/react": "npm:^18.2.66"
     "@types/react-dom": "npm:^18.2.22"

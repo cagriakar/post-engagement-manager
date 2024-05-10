@@ -4,6 +4,8 @@ export default {
   theme: {
     extend: {}
   },
+  daisyui: {
+    themes: ['winter', 'night']
+  },
   plugins: [require('@tailwindcss/typography'), require('daisyui')]
 };
-
