@@ -12,6 +12,7 @@ import {
   useReactTable
 } from '@tanstack/react-table';
 import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Checkbox from '../Checkbox';
 import { BackArrow, DoubleBackArrow, DoubleNextArrow, DownArrow, NextArrow, UpArrow } from '../icons';
 import { getPlatformIcon } from './utils';
@@ -90,7 +91,7 @@ export default function Table() {
         id: 'action',
         accessorKey: 'id',
         header: () => <div className='px-1'>Action</div>,
-        cell: () => (
+        cell: (info) => (
           <div role='listbox' className='dropdown dropdown-bottom dropdown-end'>
             <label tabIndex={0}>
               <button className='btn btn-xs btn-outline'>Actions</button>
@@ -101,7 +102,7 @@ export default function Table() {
               role='menu'
             >
               <li role='menuitem'>
-                <a>Edit</a>
+                <Link to={`${info.getValue()}/edit`}>Edit</Link>
               </li>
               <li role='menuitem'>
                 <a>Rename</a>

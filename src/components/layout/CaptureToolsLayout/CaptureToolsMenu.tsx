@@ -18,9 +18,9 @@ const items = [
     icon: <PlugIcon />
   },
   {
-    name: '	Messenger Code',
+    name: 'Messenger Code',
     link: '/capture-tools/messenger-code',
-    icon: <PlugIcon />
+    icon: <ChatIcon />
   },
   {
     name: 'Post Engagement',
@@ -44,7 +44,7 @@ export default function CaptureToolsMenu() {
       </li>
       {items.map(({ name, link, icon }) => (
         <li key={link} role='menuitem'>
-          <Link to={link} className={pathname === link ? 'active' : ''}>
+          <Link to={link} className={pathname.includes(link) ? 'active' : ''}>
             {icon}
             {name}
           </Link>
