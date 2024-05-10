@@ -1,10 +1,10 @@
 type PostEngagement = {
-	id: number;
-	name: string;
-	engaged_unique: number[];
-	acquired: number;
-	conversion: number;
-	platform: PlatformType;
+  id: number;
+  name: string;
+  engaged_unique: number[];
+  acquired: number;
+  conversion: number;
+  platform: PlatformType;
 };
 const PlatformTypeMap = { messenger: 'messenger', instagram: 'instagram' } as const;
 type PlatformType = keyof typeof PlatformTypeMap;
