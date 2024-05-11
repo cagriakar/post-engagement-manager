@@ -19,14 +19,12 @@ export function makeServer() {
         return schema.postEngagements.find(id).destroy();
       });
 
-      this.patch('/postEngagements/:id', (schema, request) => {
-        const newAttrs = JSON.parse(request.requestBody);
-        const id = request.params.id;
+      this.post('/postEngagements', (schema, request) => {
+        const attrs = JSON.parse(request.requestBody);
+
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        const postEngagement = schema.postEngagements.find(id);
-
-        return postEngagement.update(newAttrs);
+        return schema.postEngagements.create(attrs);
       });
     },
 

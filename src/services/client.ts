@@ -16,12 +16,12 @@ async function deletePostEngagement(id: number) {
   await api.delete<PostEngagementsResponse>(endpoints.deletePostEngagement(id));
 }
 
-async function updatePostEngagement(newValues: Partial<PostEngagement> & Pick<PostEngagement, 'id'>) {
-  await api.patch<PostEngagementsResponse>(endpoints.updatePostEngagement(newValues.id), newValues);
+async function addPostEngagement(newValues: Partial<PostEngagement>) {
+  await api.post<PostEngagementsResponse>(endpoints.addPostEngagement, newValues);
 }
 
 export default {
   getPostEngagementList,
   deletePostEngagement,
-  updatePostEngagement
+  addPostEngagement
 };
