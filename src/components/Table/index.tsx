@@ -1,4 +1,5 @@
-import MOCK_DATA from '@/mock/postEngagementList';
+import usePostEngagements from '@/hooks/usePostEngagements';
+import client from '@/services/client';
 import { PlatformType, PostEngagement } from '@/types';
 import {
   ColumnDef,
@@ -17,13 +18,17 @@ import Checkbox from '../Checkbox';
 import { BackArrow, DoubleBackArrow, DoubleNextArrow, DownArrow, NextArrow, UpArrow } from '../icons';
 import { getPlatformIcon } from './utils';
 
-export default function Table() {
+type Props = {
+  data: PostEngagement[];
+};
+export default function Table({ data }: Props) {
   const [rowSelection, setRowSelection] = useState({});
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: 10
   });
   const [sorting, setSorting] = useState<SortingState>([]);
+  const { refetch } = usePostEngagements();
 
   const columns = useMemo<ColumnDef<PostEngagement>[]>(
     () => [
@@ -85,7 +90,7 @@ export default function Table() {
         id: 'conversion',
         accessorKey: 'conversion',
         header: () => <div className='px-1'>Conversion</div>,
-        cell: (info) => <div className='px-1'>{`${(info.getValue() as number) * 100}%`}</div>
+        cell: (info) => <div className='px-1'>{`${((info.getValue() as number) * 100).toFixed(0)}%`}</div>
       },
       {
         id: 'action',
@@ -98,28 +103,36 @@ export default function Table() {
             </label>
             <ul
               tabIndex={0}
-              className='dropdown-content menu p-2 shadow bg-base-100 rounded-box menu-xs z-[1]'
+              className='dropdown-content menu p-2 shadow bg-base-100 rounded-box menu-xs z-[1] menu-dropdown-show'
               role='menu'
             >
               <li role='menuitem'>
                 <Link to={`${info.getValue()}/edit`}>Edit</Link>
               </li>
-              <li role='menuitem'>
+              <li role='menuitem' className='disabled'>
                 <a>Rename</a>
               </li>
               <li role='menuitem'>
-                <a>Delete</a>
+                <button
+                  className='btn-ghost'
+                  onClick={async () => {
+                    await client.deletePostEngagement(info.getValue() as number);
+                    await refetch();
+                  }}
+                >
+                  Delete
+                </button>
               </li>
             </ul>
           </div>
         )
       }
     ],
-    []
+    [refetch]
   );
 
   const table = useReactTable<PostEngagement>({
-    data: MOCK_DATA,
+    data,
     columns: columns,
     state: { pagination, rowSelection, sorting },
     enableRowSelection: true,
@@ -157,8 +170,15 @@ export default function Table() {
             {table.getRowModel().rows.map((row) => {
               return (
                 <tr key={row.id}>
-                  {row.getVisibleCells().map((cell) => {
-                    return <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>;
+                  {row.getVisibleCells().map((cell, i) => {
+                    return (
+                      <td
+                        key={cell.id}
+                        style={[0, 1, 6].includes(i) ? { width: '20px' } : { width: '150px', whiteSpace: 'nowrap' }}
+                      >
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      </td>
+                    );
                   })}
                 </tr>
               );

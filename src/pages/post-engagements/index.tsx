@@ -1,6 +1,6 @@
-import Table from '@/components/Table';
 import { SearchIcon } from '@/components/icons';
 import BulkActionsMenu from './components/BulkActionsMenu';
+import PostEngagementsTable from './components/PostEngagementsTable';
 
 export default function PostEngagements() {
   return (
@@ -24,7 +24,7 @@ export default function PostEngagements() {
         </div>
         <BulkActionsMenu />
       </div>
-      <Table />
+      <PostEngagementsTable />
     </>
   );
 }

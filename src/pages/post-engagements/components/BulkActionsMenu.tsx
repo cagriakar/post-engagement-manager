@@ -14,7 +14,7 @@ export default function BulkActionsMenu() {
         className='dropdown-content menu p-2 shadow bg-base-100 rounded-box menu-sm z-[1] mt-1 w-48'
         role='menu'
       >
-        <li role='menuitem'>
+        <li role='menuitem' className='disabled'>
           <a>Delete</a>
         </li>
       </ul>
