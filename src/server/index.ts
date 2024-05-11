@@ -1,6 +1,6 @@
 import { PlatformType, PlatformTypeMap, PostEngagement, PostEngagementDetail } from '@/types';
 import { faker } from '@faker-js/faker';
-import { Factory, Model, createServer } from 'miragejs';
+import { Factory, Model, Response, createServer } from 'miragejs';
 
 type PostEngagementModel = Partial<PostEngagementDetail & PostEngagement>;
 
@@ -12,6 +12,19 @@ export function makeServer() {
     routes() {
       this.namespace = 'api';
       this.get('/postEngagements');
+
+      this.get('/postEngagements/:id', (schema, request) => {
+        const id = request.params.id;
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        const res = schema.postEngagements.find(id);
+        if (res) return res;
+
+        const headers = {};
+
+        return new Response(404, headers);
+      });
+
       this.delete('/postEngagements/:id', (schema, request) => {
         const id = request.params.id;
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment

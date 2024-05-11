@@ -1,3 +1,22 @@
 export default function LoadingPage() {
-  return <p className='p-4 w-full h-full text-center text-green-500'>Loading Page...</p>;
+  return (
+    <div className='container p-10 grid gap-5'>
+      <div className='flex flex-col gap-4 w-full'>
+        <div className='skeleton h-32 w-full'></div>
+        <div className='skeleton h-4 w-28'></div>
+        <div className='skeleton h-4 w-28'></div>
+        <div className='skeleton h-4 w-full'></div>
+        <div className='skeleton h-4 w-full'></div>
+        <div className='skeleton h-4 w-full'></div>
+      </div>
+      <div className='flex flex-col gap-4 w-full'>
+        <div className='skeleton h-32 w-full'></div>
+        <div className='skeleton h-4 w-28'></div>
+        <div className='skeleton h-4 w-28'></div>
+        <div className='skeleton h-4 w-full'></div>
+        <div className='skeleton h-4 w-full'></div>
+        <div className='skeleton h-4 w-full'></div>
+      </div>
+    </div>
+  );
 }

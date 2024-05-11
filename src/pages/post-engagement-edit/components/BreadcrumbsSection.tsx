@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 
-export default function BreadcrumbsSection() {
+type Props = {
+  title: string;
+};
+export default function BreadcrumbsSection({ title }: Props) {
   return (
     <div className='-mt-5 mb-2 flex items-center justify-between px-8'>
       <div role='navigation' aria-label='Breadcrumbs' className='breadcrumbs text-lg'>
@@ -14,6 +17,7 @@ export default function BreadcrumbsSection() {
           <li role='link'>Edit</li>
         </ul>
       </div>
+      <strong className='text-lg'>{title}</strong>
       <div>
         <button className='btn btn-sm btn-primary'>Save</button>
       </div>
