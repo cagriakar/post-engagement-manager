@@ -1,6 +1,11 @@
-import { useParams } from 'react-router-dom';
+import BreadcrumbsSection from './components/BreadcrumbsSection';
+import FormSection from './components/FormSection';
 
 export default function PostEngagementEdit() {
-  const { postEngageId } = useParams();
-  return <div>PostEngagementEdit {postEngageId}</div>;
+  return (
+    <>
+      <BreadcrumbsSection />
+      <FormSection />
+    </>
+  );
 }

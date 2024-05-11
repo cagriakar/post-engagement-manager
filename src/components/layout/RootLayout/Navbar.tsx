@@ -6,6 +6,7 @@ import {
   HelpCenterIcon,
   HomeIcon,
   LogoutIcon,
+  MenuIcon,
   OnlineIcon,
   WalletIcon,
   WarningIcon
@@ -23,6 +24,9 @@ export default function Navbar() {
             </div>
           </div>
         </Link>
+        <label className='btn btn-circle btn-ghost lg:hidden' htmlFor='side-drawer' aria-label='open sidebar'>
+          <MenuIcon />
+        </label>
       </div>
       <div className='flex-1 pl-3'>
         <div className='breadcrumbs text-base'>

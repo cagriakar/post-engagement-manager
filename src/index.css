@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
+
+.badge-clepher {
+    --tw-text-opacity: 1;
+    align-items: center;
+    background-color: oklch(100% 0 0/var(--tw-bg-opacity));
+    background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
+    border-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-border-opacity)));
+    border-radius: 1.9rem;
+    border-radius: var(--rounded-badge,1.9rem);
+    color: oklch(41.8869% .053885 255.824911/var(--tw-text-opacity));
+    color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
+    display: inline-flex;
+    justify-content: center;
+    padding-left: .563rem;
+    padding-right: .563rem;
+    transition-duration: .2s;
+    transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;
+    transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+    transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-timing-function: cubic-bezier(0,0,.2,1);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content
+}
+
+:where(.menu li) .badge-clepher {
+    justify-self: end
+}
+
+.badge-clepher {
+    --tw-border-opacity: 1;
+    --tw-bg-opacity: 1;
+    background-color: rgb(222 239 255/var(--tw-bg-opacity));
+    border-color: rgb(199 228 255/var(--tw-border-opacity));
+    border-width: 1px;
+    font-size: .875rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    margin: .125rem;
+    padding: .875rem .625rem
+}
+
 @tailwind utilities;
