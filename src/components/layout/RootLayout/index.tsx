@@ -16,7 +16,7 @@ export default function RootLayout() {
             </div>
           </div>
           <div className='drawer-side'>
-            <label className='drawer-overlay' htmlFor='side-drawer' aria-label='close sidebar'/>
+            <label className='drawer-overlay' htmlFor='side-drawer' aria-label='close sidebar' />
             <Sidebar />
           </div>
         </div>

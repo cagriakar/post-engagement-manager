@@ -57,7 +57,7 @@ export default function AddPostEngagementModal() {
               }
             }}
           >
-            {inAction ? <span className='loading loading-spinner'/> : null}
+            {inAction ? <span className='loading loading-spinner' /> : null}
             Add
           </button>
         </div>

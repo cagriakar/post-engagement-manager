@@ -57,7 +57,7 @@ export default function Table({ data }: Props) {
       {
         id: 'platform',
         accessorKey: 'platform',
-        header: () => <div className='px-1'/>,
+        header: () => <div className='px-1' />,
         cell: (info) => <img className='h-3.5 w-3.5' src={getPlatformIcon(info.getValue() as PlatformType) ?? ''} />
       },
       {

@@ -18,7 +18,7 @@ function PostRequireSection() {
       {selectedReactions.map((react) => (
         <div className='badge-clepher' key={react}>
           <span data-reaction={react}>
-            <span className={clsx(`like-btn-${react}`, 'inline pr-5')}/>
+            <span className={clsx(`like-btn-${react}`, 'inline pr-5')} />
             <span className='ml-1'>{react}</span>
             <span className='ml-1 cursor-pointer text-xs hover:text-error' onClick={handleRemoveReaction(react)}>
               ✕
