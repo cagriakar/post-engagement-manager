@@ -1,3 +1,4 @@
+import { useSearchContext } from '@/contexts/SearchContextProvider';
 import usePostEngagements from '@/hooks/usePostEngagements';
 import client from '@/services/client';
 import { PlatformType, PostEngagement } from '@/types';
@@ -22,6 +23,7 @@ type Props = {
   data: PostEngagement[];
 };
 export default function Table({ data }: Props) {
+  const { searchTerm, setSearchTerm } = useSearchContext();
   const [rowSelection, setRowSelection] = useState({});
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
@@ -134,7 +136,7 @@ export default function Table({ data }: Props) {
   const table = useReactTable<PostEngagement>({
     data,
     columns: columns,
-    state: { pagination, rowSelection, sorting },
+    state: { pagination, rowSelection, sorting, globalFilter: searchTerm },
     enableRowSelection: true,
     onRowSelectionChange: setRowSelection,
     getCoreRowModel: getCoreRowModel(),
@@ -142,7 +144,8 @@ export default function Table({ data }: Props) {
     getPaginationRowModel: getPaginationRowModel(),
     getSortedRowModel: getSortedRowModel(),
     onPaginationChange: setPagination,
-    onSortingChange: setSorting
+    onSortingChange: setSorting,
+    onGlobalFilterChange: setSearchTerm
   });
 
   return (

@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 export default function usePostEngagement(id: number = 0) {
   return useQuery({
-    queryKey: [queryKeys.postEngagements, id],
+    queryKey: [queryKeys.postEngagement, id],
     queryFn: () => client.getPostEngagement(id),
     enabled: !!id
   });

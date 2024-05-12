@@ -1,3 +1,4 @@
 export default {
-  postEngagements: 'postEngagements'
+  postEngagements: 'postEngagements',
+  postEngagement: 'postEngagement'
 };

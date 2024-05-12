@@ -7,5 +7,5 @@ export default function PostEngagementsTable() {
 
   if (isLoading) return <LoadingTable />;
 
-  return <Table data={data} />;
+  return <Table data={data ?? []} />;
 }
