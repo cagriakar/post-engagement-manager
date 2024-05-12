@@ -6,7 +6,7 @@ export default function FormSection() {
     <div className='mx-6'>
       <div aria-label='Card' className='card bg-base-100 p-0 shadow-sm card-bordered'>
         <div className='card-body gap-0 p-0'>
-          <div className='card-title'></div>
+          <div className='card-title' />
           <div className='flex flex-row'>
             <div className='basis-2/5'>
               <EngagementConfigurationTab />

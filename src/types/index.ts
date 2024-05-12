@@ -4,7 +4,7 @@ type Reaction = keyof typeof ReactionsMap;
 const PostEngagementReplyTypeMap = { single: 'single', flow: 'flow' } as const;
 type PostEngagementReplyType = keyof typeof PostEngagementReplyTypeMap;
 
-const AutoReplyCommentTypeMap = { static: 'static', flow: 'ai' } as const;
+const AutoReplyCommentTypeMap = { static: 'static', openai: 'openai' } as const;
 type AutoReplyCommentType = keyof typeof AutoReplyCommentTypeMap;
 
 type PostEngagementDetail = {
@@ -39,4 +39,15 @@ type PostEngagement = {
 const PlatformTypeMap = { messenger: 'messenger', instagram: 'instagram' } as const;
 type PlatformType = keyof typeof PlatformTypeMap;
 
-export { PlatformTypeMap, type PlatformType, type PostEngagement, type PostEngagementDetail };
+export {
+  AutoReplyCommentTypeMap,
+  PlatformTypeMap,
+  PostEngagementReplyTypeMap,
+  ReactionsMap,
+  type AutoReplyCommentType,
+  type PlatformType,
+  type PostEngagement,
+  type PostEngagementDetail,
+  type PostEngagementReplyType,
+  type Reaction
+};

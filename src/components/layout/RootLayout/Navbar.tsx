@@ -77,7 +77,7 @@ export default function Navbar() {
           <button className='btn avatar btn-circle btn-ghost'>
             <div className='w-10 rounded-full'>
               <img
-                src='https://avatars.githubusercontent.com/u/21959017?s=400&amp;u=1c2711bcd2713d682bf553835a6dce998c6fd49b&amp;v=4'
+                src='https://avatars.githubusercontent.com/u/21959017?s=400&u=1c2711bcd2713d682bf553835a6dce998c6fd49b&v=4'
                 loading='lazy'
                 alt='Profile'
               />
